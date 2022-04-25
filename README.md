@@ -1,64 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Free PMO
+> *Tell our clients that we are managing our projects professionally.*
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Build Status](https://travis-ci.org/nafiesl/free-pmo.svg?branch=master)](https://travis-ci.org/nafiesl/free-pmo)
+[![StyleCI](https://styleci.io/repos/111558421/shield?branch=master)](https://styleci.io/repos/111558421)
 
-## About Laravel
+Free PMO (Project Management Office), management project software for *freelancer* and agency, built with **Laravel 5** Framework.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> [Baca versi Bahasa Indonesia](README.id.md)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Content
+1. [About Free PMO](#about)
+2. [Goals](#goals)
+3. [Getting Started](#getting-started)
+    - [Server Requirements](#server-requirements)
+    - [Installation Steps](#installation-steps)
+4. [Maintainers and Contributors](#maintainers-and-contributors)
+5. [Ingredients](#ingredients)
+6. [License](#license)
+7. [Contributing](#contributing)
+8. [Screenshots](#screenshots)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+***
 
-## Learning Laravel
+## About
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Free PMO** is a project management and project monitoring software. This software is suitable for Freelancer or Agencies, or any company that has project based services for thier customers.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Free PMO** consists of two words, *Free* and *PMO*.
+1. **Free** can be stands for **Freelancer**, or **Free Software**, and off course **Free (of charge)**.
+2. **PMO** stands for ***Project Management Office***, like office of project management activities.
 
-## Laravel Sponsors
+Main features on Free PMO are project management and project payment trasanctions. Other features are explaied on this [concept](CONCEPT.md) file.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Goals
 
-### Premium Partners
+Free PMO was built for easy and professional project management.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Getting Started
+This application can be installed on local server and online server with these specifications :
 
-## Contributing
+#### Server Requirements
+1. PHP >= 7.3.0 (and meet [Laravel 8.x server requirements](https://laravel.com/docs/8.x/deployment#server-requirements)),
+2. MySQL or MariaDB database,
+3. SQlite (for automated testing).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Installation Steps
 
-## Code of Conduct
+1. Clone the repo : `git clone https://github.com/nafiesl/free-pmo.git`
+2. `$ cd free-pmo`
+3. `$ composer install`
+4. `$ cp .env.example .env`
+5. `$ php artisan key:generate`
+6. Create new MySQL database for this application
+7. Set database credentials on `.env` file
+8. `$ php artisan migrate`
+9. `$ php artisan storage:link`
+10. `$ php artisan serve`
+11. Visit `http://localhost:8000/app-install` via web browser
+12. Fill out the forms
+13. Done, you are logged in as Administrator.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![Install Free PMO](public/screenshots/pmo-install-free-pmo.jpg)
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Maintainers and Contributors
+
+This project maintained by [Nafies Luthfi](https://github.com/nafiesl) and developed by [contributors](https://github.com/nafiesl/free-pmo/graphs/contributors).
+
+## Ingredients
+
+Free PMO built with [TDD metode](https://blog.nafies.id/laravel/testing-laravel-tentang-automated-testing) with these ingredients support :
+
+##### Dependencies
+* [Framework Laravel](https://laravel.com/docs/8.x) (version 5.2 to 8.x).
+* [luthfi/formfield](https://github.com/nafiesl/FormField), Bootstrap 3 Form Wrapper for [laravelcollective/html](https://github.com/laravelcollective/html).
+* [riskihajar/terbilang](https://github.com/riskihajar/terbilang), create indonesian in-word number (for payment receipt) and roman numeral.
+
+##### Dev Dependencies
+
+* [PHPUnit](https://github.com/sebastianbergmann/phpunit), PHP testing framework.
+* [laravel/browser-kit-testing](https://github.com/laravel/browser-kit-testing), browserkit testing package for Laravel ^5.4.
+* [luthfi/simple-crud-generator](https://github.com/nafiesl/SimpleCrudGenerator), CRUD generator artisan command for faster TDD Workflow.
+* [johnkary/phpunit-speedtrap](https://github.com/johnkary/phpunit-speedtrap), checks for slow testing (because of ineffective query or proccess).
+
+##### Frontend
+
+* [Start Bootstrap - SB Admin 2](https://startbootstrap.com/template-overviews/sb-admin-2), Admin template.
+* [Bootstrap v3.3.6](https://getbootstrap.com/docs/3.3/)
+* [Font Awesome 4.6.3](http://fontawesome.io/cheatsheet)
+* [select2](https://github.com/select2/select2)
+* [rangeslider.js](http://rangeslider.js.org)
+* [FullCalendar](https://fullcalendar.io)
+* [morris.js](http://morrisjs.github.io/morris.js), yearly and monthly earning report graph.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Free PMO Project is a free and open-source under [MIT license](LICENSE).
+
+## Contributing
+
+If you want to contribute to this project, by creating *Issue*, new feature proposal, *Pull Request*, or donation, please see this [contributing guidelines](CONTRIBUTING.md).
+
+## Screenshots
+
+#### Dashboard
+![Free PMO Dashboard](public/screenshots/pmo-dashboard-01.jpg)
+
+#### Project Detail
+![Free PMO Project Detail](public/screenshots/pmo-project-detail-01.jpg)
+
+#### Project Job List
+![Free PMO Project Job List](public/screenshots/pmo-project-jobs-01.jpg)
+
+#### Project Job Detail
+![Free PMO Job Tasks](public/screenshots/pmo-job-tasks-01.jpg)
+
+#### Yearly Report
+![Free PMO Yearly Report](public/screenshots/pmo-yearly-report-01.jpg)
+
+#### Automated Testing
+
+```bash
+$ php artisan test --parallel
+```
+
+![Free PMO Testing](public/screenshots/pmo-testing-01.jpg)

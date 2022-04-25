@@ -1,19 +1,23 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+Route::group(['prefix' => 'v1', 'namespace' => 'Api', 'as' => 'api.', 'middleware' => ['auth:api']], function () {
+    require __DIR__.'/api/projects.php';
+    /*
+     * Calendar
+     */
+    Route::get('get-events', ['as' => 'events.index', 'uses' => 'EventsController@index']);
+    Route::post('events', ['as' => 'events.store', 'uses' => 'EventsController@store']);
+    Route::patch('events/update', ['as' => 'events.update', 'uses' => 'EventsController@update']);
+    Route::patch('events/reschedule', ['as' => 'events.reschedule', 'uses' => 'EventsController@reschedule']);
+    Route::delete('events/delete', ['as' => 'events.destroy', 'uses' => 'EventsController@destroy']);
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+    /*
+     * Customer Route
+     */
+    Route::post('customers', 'CustomerController@index')->name('customers.index');
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    /*
+     * Vendor Route
+     */
+    Route::post('vendors', 'VendorController@index')->name('vendors.index');
 });
